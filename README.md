@@ -1,4 +1,4 @@
-# RunOnDocker — Kali Linux Web Desktop
+# Security Tools
 
 Docker-based Kali Linux with a browser-accessible desktop (Selkies). Includes Nmap, Metasploit, Burp Suite, Wireshark, and common CLI tools.
 
@@ -74,10 +74,10 @@ docker compose up -d --force-recreate
 
 ```bash
 # Logs
-docker logs -f hacking_station_pro
+docker logs -f kali-lab
 
 # Shell inside container
-docker exec -it hacking_station_pro /bin/bash
+docker exec -it kali-lab /bin/bash
 
 # Stop
 docker compose down

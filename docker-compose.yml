@@ -1,7 +1,9 @@
+name: security-toolbox
+
 services:
   kali-lab:
     build: .
-    container_name: hacking_station_pro
+    container_name: kali-lab
     privileged: true
     # On Mac/Windows, network_mode: host does NOT expose container ports to localhost.
     # Use port mapping so the web UI works. For Nmap/Wireshark on real host network, run on Linux and uncomment network_mode below (and remove/comment ports).
