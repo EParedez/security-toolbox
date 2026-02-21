@@ -1,0 +1,23 @@
+services:
+  kali-lab:
+    build: .
+    container_name: hacking_station_pro
+    privileged: true
+    # On Mac/Windows, network_mode: host does NOT expose container ports to localhost.
+    # Use port mapping so the web UI works. For Nmap/Wireshark on real host network, run on Linux and uncomment network_mode below (and remove/comment ports).
+    # network_mode: host
+    ports:
+      - "7991:7991"   # HTTPS web desktop (use https://localhost:7991)
+    #  - "3000:3000"   # HTTP (optional)
+    environment:
+      - CUSTOM_HTTPS_PORT=7991
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/UTC
+      - PASSWORD=hacktheplanet # HTTP Basic auth (optional; unset = no auth)
+    volumes:
+      - ./kali-data:/config # Your projects/scans will be saved here
+    shm_size: "1gb"   # Recommended for desktop images
+    restart: unless-stopped
+
+# docker compose up -d --force-recreate

@@ -1,0 +1,27 @@
+# Container persistent data (Kali home: config, cache, scans, secrets)
+kali-data/
+
+# Compose env / secrets (keep passwords out of repo)
+.env
+.env.*
+!.env.example
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor / IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+
+.claude/
+.agents/
+.agent/
+
+skills-lock.json
